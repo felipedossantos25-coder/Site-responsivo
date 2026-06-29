@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ciência Moderna</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#eef5ff;
+    color:#222;
+    line-height:1.6;
+}
+
+header{
+    background:linear-gradient(135deg,#0d47a1,#1976d2);
+    color:white;
+    text-align:center;
+    padding:60px 20px;
+}
+
+header h1{
+    font-size:3rem;
+}
+
+header p{
+    margin-top:10px;
+    font-size:1.2rem;
+}
+
+nav{
+    background:#1565c0;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:15px 20px;
+    transition:.3s;
+}
+
+nav a:hover{
+    background:#0d47a1;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    padding:40px 0;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+    overflow:hidden;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+.card h3{
+    color:#1565c0;
+    margin:15px;
+}
+
+.card p{
+    margin:0 15px 20px;
+}
+
+.section{
+    margin-top:60px;
+}
+
+footer{
+    background:#0d47a1;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:50px;
+}
+
+button{
+    background:#1976d2;
+    color:white;
+    border:none;
+    padding:12px 22px;
+    border-radius:8px;
+    cursor:pointer;
+    margin-top:20px;
+    font-size:16px;
+}
+
+button:hover{
+    background:#0d47a1;
+}
+
+#curiosidade{
+    margin-top:20px;
+    font-weight:bold;
+    color:#1565c0;
+}
+
+@media(max-width:768px){
+    header h1{
+        font-size:2.2rem;
+    }
+
+    header p{
+        font-size:1rem;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>🔬 Ciência Moderna</h1>
+    <p>Explorando o Universo através do conhecimento.</p>
+</header>
+
+<nav>
+    <a href="#">Início</a>
+    <a href="#">Astronomia</a>
+    <a href="#">Biologia</a>
+    <a href="#">Tecnologia</a>
+    <a href="#">Contato</a>
+</nav>
+
+<div class="container">
+
+    <h2>Áreas da Ciência</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=800" alt="Astronomia">
+            <h3>🌌 Astronomia</h3>
+            <p>Estuda estrelas, galáxias, planetas e a origem do universo.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=800" alt="Biologia">
+            <h3>🧬 Biologia</h3>
+            <p>Investiga os seres vivos, evolução, genética e ecossistemas.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1581093588401-22d65d4e5f5c?w=800" alt="Tecnologia">
+            <h3>🤖 Tecnologia</h3>
+            <p>Inovações em inteligência artificial, robótica e computação.</p>
+        </div>
+
+    </div>
+
+    <div class="section">
+        <h2>Curiosidade Científica</h2>
+        <p>Clique no botão para descobrir uma curiosidade.</p>
+
+        <button onclick="mostrarCuriosidade()">
+            Mostrar Curiosidade
+        </button>
+
+        <p id="curiosidade"></p>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 Ciência Moderna | Desenvolvido em HTML, CSS e JavaScript.</p>
+</footer>
+
+<script>
+const curiosidades = [
+"🧠 O cérebro humano possui cerca de 86 bilhões de neurônios.",
+"🌍 A Terra gira a aproximadamente 1670 km/h na linha do Equador.",
+"☀️ A luz do Sol leva cerca de 8 minutos e 20 segundos para chegar à Terra.",
+"🧬 O DNA de uma única célula humana possui aproximadamente 2 metros de comprimento.",
+"🚀 O universo continua em expansão desde o Big Bang."
+];
+
+function mostrarCuriosidade(){
+    const indice = Math.floor(Math.random()*curiosidades.length);
+    document.getElementById("curiosidade").innerHTML = curiosidades[indice];
+}
+</script>
+
+</body>
+</html>
