@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tecnologia do Futuro</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+background:#eef4ff;
+color:#222;
+line-height:1.6;
+}
+
+header{
+background:linear-gradient(135deg,#0d47a1,#2196f3);
+color:#fff;
+text-align:center;
+padding:60px 20px;
+}
+
+header h1{
+font-size:3rem;
+margin-bottom:10px;
+}
+
+nav{
+background:#1565c0;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+nav a{
+color:white;
+padding:15px 20px;
+text-decoration:none;
+transition:.3s;
+}
+
+nav a:hover{
+background:#0d47a1;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+padding:40px 0;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+margin-top:30px;
+}
+
+.card{
+background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.card h3{
+padding:15px;
+color:#1565c0;
+}
+
+.card p{
+padding:0 15px 20px;
+}
+
+.avaliacao{
+margin-top:50px;
+text-align:center;
+}
+
+button{
+padding:12px 25px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+font-size:17px;
+margin:10px;
+color:white;
+transition:.3s;
+}
+
+.like{
+background:#2e7d32;
+}
+
+.like:hover{
+background:#1b5e20;
+}
+
+.deslike{
+background:#d32f2f;
+}
+
+.deslike:hover{
+background:#b71c1c;
+}
+
+.curiosidade{
+margin-top:50px;
+text-align:center;
+}
+
+.curiosidade button{
+background:#1565c0;
+}
+
+.curiosidade button:hover{
+background:#0d47a1;
+}
+
+#texto{
+margin-top:20px;
+font-size:18px;
+font-weight:bold;
+color:#1565c0;
+}
+
+footer{
+margin-top:50px;
+background:#0d47a1;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+@media(max-width:700px){
+
+header h1{
+font-size:2.2rem;
+}
+
+}
+</style>
+
+</head>
+<body>
+
+<header>
+
+<h1>💻 Tecnologia do Futuro</h1>
+
+<p>Conheça algumas das tecnologias que estão transformando o mundo.</p>
+
+</header>
+
+<nav>
+
+<a href="#">Início</a>
+<a href="#">IA</a>
+<a href="#">Robótica</a>
+<a href="#">Computação</a>
+<a href="#">Contato</a>
+
+</nav>
+
+<div class="container">
+
+<h2>Principais Tecnologias</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=900" alt="Robô">
+
+<h3>Inteligência Artificial</h3>
+
+<p>A Inteligência Artificial permite que computadores aprendam padrões, tomem decisões e auxiliem pessoas em diversas tarefas do cotidiano.</p>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=900" alt="Computador">
+
+<h3>Computação</h3>
+
+<p>A computação está presente em praticamente todos os setores da sociedade, tornando processos mais rápidos, seguros e eficientes.</p>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=900" alt="Tecnologia">
+
+<h3>Internet</h3>
+
+<p>A internet conecta bilhões de pessoas, permitindo comunicação instantânea, ensino, pesquisas e desenvolvimento tecnológico.</p>
+
+</div>
+
+</div>
+
+<div class="avaliacao">
+
+<h2>Avalie este site</h2>
+
+<button class="like" onclick="curtir()">
+
+👍 Curtir (<span id="likes"></span>)
+
+</button>
+
+<button class="deslike" onclick="descurtir()">
+
+👎 Deslike (<span id="deslikes"></span>)
+
+</button>
+
+</div>
+
+<div class="curiosidade">
+
+<h2>Curiosidade</h2>
+
+<button onclick="mostrarCuriosidade()">
+
+Mostrar Curiosidade
+
+</button>
+
+<p id="texto"></p>
+
+</div>
+
+</div>
+
+<footer>
+
+<p>Projeto Escolar • Desenvolvido em HTML, CSS e JavaScript • 2026</p>
+
+</footer>
+
+<script>
+
+let likes=Math.floor(Math.random()*101);
+let deslikes=Math.floor(Math.random()*101);
+
+document.getElementById("likes").innerHTML=likes;
+document.getElementById("deslikes").innerHTML=deslikes;
+
+function curtir(){
+
+likes++;
+
+document.getElementById("likes").innerHTML=likes;
+
+}
+
+function descurtir(){
+
+deslikes++;
+
+document.getElementById("deslikes").innerHTML=deslikes;
+
+}
+
+const curiosidades=[
+
+"💡 O primeiro computador eletrônico ocupava uma sala inteira.",
+
+"🤖 A Inteligência Artificial já é utilizada em hospitais para auxiliar diagnósticos.",
+
+"🌐 Mais de cinco bilhões de pessoas utilizam a internet.",
+
+"🚀 Satélites permitem GPS, internet e previsão do tempo.",
+
+"📱 Um smartphone moderno possui mais poder de processamento do que muitos computadores antigos."
+
+];
+
+function mostrarCuriosidade(){
+
+let i=Math.floor(Math.random()*curiosidades.length);
+
+document.getElementById("texto").innerHTML=curiosidades[i];
+
+}
+
+</script>
+
+</body>
+</html>
